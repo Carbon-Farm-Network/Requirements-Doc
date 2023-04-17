@@ -30,3 +30,10 @@ Add Agent display for when an agent is clicked.  Include: image, name, contact i
 Sample from REA Playspace, just informational, or maybe there is some code that could be re-used.
 ![](https://i.imgur.com/ahweAso.png)
 ![](https://i.imgur.com/oc4rCxH.png)
+
+2 ideas which can be combined:
+
+![nytl-agent-popup2](https://user-images.githubusercontent.com/3776081/232624062-cc3fa808-7bac-44e9-b23e-27e36678d430.png)
+![nytl-agent-popup](https://user-images.githubusercontent.com/3776081/232624113-bf43cadb-6f07-44b7-89d8-7ef1460795e8.png)
+
+
