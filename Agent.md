@@ -27,9 +27,10 @@ Add Role as a filter for the Agents on the map.  Also add facet/facet values as 
 Add Agent display for when an agent is clicked.  Include: image, name, contact info (in notes), facets with facet values designated for them.  Leave room for adding offers later.
 
 ### Examples
-Sample from REA Playspace, just informational, or maybe there is some code that could be re-used.
-![](https://i.imgur.com/ahweAso.png)
-![](https://i.imgur.com/oc4rCxH.png)
+Samples from REA Playspace, just informational, or maybe there is some code that could be re-used.
+![nytl-agent-list-smaller](https://user-images.githubusercontent.com/3776081/232624721-95b9f022-212a-42f9-bc3e-2cc983577550.png)
+![nytl-agent-smaller](https://user-images.githubusercontent.com/3776081/232624736-21258800-71c3-451b-a633-b59fbe9b1951.png)
+
 
 2 ideas which can be combined:
 
