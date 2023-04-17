@@ -4,9 +4,10 @@ This repo contains documentation of the application requirements for the hREA-ba
 
 ## Table of Contents
 
-[General UX](GeneralUX.md)
-[Agents](Agent.md)
-[Facets](Facets.md)
-[Resource Specifications](ResourceSpecification.md)
-[Offers](Offers.md)
+* [Useful Links](Links.md)
+* [General UX](GeneralUX.md)
+* [Agents](Agent.md)
+* [Facets](Facets.md)
+* [Resource Specifications](ResourceSpecification.md)
+* [Offers](Offers.md)
 
