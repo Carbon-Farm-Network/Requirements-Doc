@@ -12,7 +12,11 @@
 ## Technical references
 
 * https://hrea.io/
-* 
+* https://github.com/h-REA
+* https://valueflo.ws
+* https://lab.allmende.io/valueflows/valueflows
+
+
 * https://github.com/lightningrodlabs/rea-playspace
 * https://github.com/neighbour-hoods/timetracking-applet
 * https://github.com/neighbour-hoods/timetracking-applet/tree/main/ui/src/components/valueflows/AgentProfileCheck
