@@ -10,54 +10,69 @@ As noted above, we'll have to load in a few Units.
 
 ## UI
 
+### Offer List
+
+Fields: 
+
+- provider on main Intent, Agent.name, 
+- resourceSpecification.name
+- available quantity (number, unit name)
+- price per (number, "USD" or "$") (?)
+
+Edit, End Offer
+
+Filter by provider agent role, resource specification name, eventually facet values
+
+
 ### Offer CRUD
 
 **On the screen:**
 
-Proposal.hasBeginning (date available, default to today)
+- Proposal.hasBeginning (date available, default to today)
 
 (main Intent, ProposedIntent.reciprocal=false)
-Intent.resourceConformsTo (ResourceSpecification.name, plus all the FacetValues for the ResourceSpecification filter by ... TBD, set up a facet)
-Intent.resourceQuantity (Measure.hasNumericalValue + Measure.hasUnit)
-Intent.availableQuantity (Measure.hasNumericalValue + Measure.hasUnit)
-Intent.note
-Intent.image
+- Intent.provider (dropdown of agents) - unless we have the agents create the offers **this isn't on the mockup**
+- Intent.resourceConformsTo (ResourceSpecification.name, plus all the FacetValues for the ResourceSpecification filter by ... TBD, set up a facet)
+- Intent.resourceQuantity (Measure.hasNumericalValue + Measure.hasUnit)
+- Intent.availableQuantity (Measure.hasNumericalValue + Measure.hasUnit)
+- Intent.note
+- Intent.image
 
 (reciprocal Intent, ProposedIntent.reciprocal=true)
-Intent.resourceQuantity (Measure.hasNumericalValue)
-Intent.resourceConformsTo (ResourceSpecification.name, dropdown filtered by.... TBD, set up a facetValue for currencies)
+- Intent.resourceQuantity (Measure.hasNumericalValue)
+- Intent.resourceConformsTo (ResourceSpecification.name, dropdown filtered by.... TBD, set up a facetValue for currencies)
 
 ![](https://i.imgur.com/aE1dK0X.png)
 
 **Fields saved:**
 
-Proposal.hasBeginning (screen, default date created)
-Proposal.hasEnd (screen, if no longer available checked, save current date)
-Proposal.inScopeOf (the network agent)
-Proposal.unitBased = true
-Proposal.created (current date when created)
+- Proposal.hasBeginning (screen, default date created)
+- Proposal.hasEnd (screen, if no longer available checked, save current date)
+- Proposal.inScopeOf (the network agent)
+- Proposal.unitBased = true
+- Proposal.created (current date when created)
 
 (main Intent)
-Intent.resourceQuantity (screen, unit="one")
-Intent.availableQuantity (screen)
-Intent.resourceConformsTo (screen)
-Intent.image (screen)
-Intent.inScopeOf (the network agent)
-Intent.finished (false until no longer available is checked, then true)
-Intent.note (screen description)
-Intent.action (always "transfer"??? might also be "deliverService"; maybe even "work", others???)
-Intent.provider (the offering agent)
-ProposedIntent.publishedIn (the proposal)
-ProposedIntent.publishes (the Intent)
-ProposedIntent.reciprocal = false
+- Intent.resourceQuantity (screen, unit="one")
+- Intent.availableQuantity (screen)
+- Intent.resourceConformsTo (screen)
+- Intent.image (screen)
+- Intent.inScopeOf (the network agent)
+- Intent.finished (false until no longer available is checked, then true)
+- Intent.note (screen description)
+- Intent.action (always "transfer"??? might also be "deliverService"; maybe even "work", others???)
+- Intent.provider (the offering agent)
+- ProposedIntent.publishedIn (the proposal)
+- ProposedIntent.publishes (the Intent)
+- ProposedIntent.reciprocal = false
 
 (reciprocal Intent, the "price")
-Intent.resourceQuantity (screen numeric value, unit = "one")
-Intent.resourceConformsTo (screen)
-Intent.inScopeOf (the network agent)
-Intent.finished (false until no longer available is checked, then true)
-Intent.action (always "transfer")
-Intent.receiver (the offering agent)
-ProposedIntent.publishedIn (the proposal)
-ProposedIntent.publishes (the Intent)
-ProposedIntent.reciprocal = true
+- Intent.resourceQuantity (screen numeric value, unit = "one")
+- Intent.resourceConformsTo (screen)
+- Intent.inScopeOf (the network agent)
+- Intent.finished (false until no longer available is checked, then true)
+- Intent.action (always "transfer")
+- Intent.receiver (the offering agent)
+- ProposedIntent.publishedIn (the proposal)
+- ProposedIntent.publishes (the Intent)
+- ProposedIntent.reciprocal = true
