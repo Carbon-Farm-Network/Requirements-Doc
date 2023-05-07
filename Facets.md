@@ -8,7 +8,8 @@
 
 This needs to be added to hREA, noting that ResourceSpecification and Agent exist.
 
-![facets-vf](https://user-images.githubusercontent.com/3776081/235470953-1a5b9e60-f8cc-4eb1-b4e0-7b0933804fd4.png)
+![facets(1)](https://user-images.githubusercontent.com/3776081/236702414-0709cbde-3edb-49f1-a14d-9442e899ab5e.png)
+
 
 Note that a separate repo has been set up, so that the facets can be used for other holochain applications. See that doc also, in the README of the repo.
 
