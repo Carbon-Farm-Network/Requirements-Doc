@@ -20,10 +20,13 @@ For us, the FacetGroup will be "hard-coded data", name will be Agent or Resource
 
 ### Configuration for the network
 
-This is the Facets and FacetValues within each Facet, for each FacetGroup.  
+This is the Facets and FacetValues within each Facet, for each FacetGroup. These are screen shots of the first draft of the UI, before hooking up to the backend. 
 
-![facets](https://user-images.githubusercontent.com/3776081/235750866-c57bb316-d779-4e13-a81f-f5a7347248c2.png)
+![facet-list](https://user-images.githubusercontent.com/3776081/236702038-9e7b5a7b-5bd1-49ad-b826-bec293adb0fa.png)
 
+![add-facet](https://user-images.githubusercontent.com/3776081/236702046-aff7675e-c309-4aa1-8812-1eaf534b58e2.png)
+
+![facet-values](https://user-images.githubusercontent.com/3776081/236702049-47c07f88-7c93-4b50-ba20-6111f95b27bc.png)
 
 ### Add FacetValue choices
 
@@ -31,6 +34,11 @@ Agent: Add to the Agent CRUD form a way to pick zero or one FacetValue for each 
 
 ResourceSpecification: Include it when we get to that, which will be needed for offers.
 
+Note: May 7, The first draft of the UI is done.
+
 ### Add to the map
 
 Both Agent and ResourceSpecification facet values will be useful filters, once offers are done.  Let's get some direction from the users on this.
+
+Note: May 7, First step here is to test once everything is hooked up and see how the filtering works.
+
