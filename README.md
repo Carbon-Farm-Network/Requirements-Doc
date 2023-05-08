@@ -6,6 +6,7 @@ This repo contains documentation of the application requirements for the hREA-ba
 
 * [Useful Links](Links.md)
 * [General UX](GeneralUX.md)
+* [General Network Configuration](network-config.md)
 * [Agents](Agent.md)
 * [Facets](Facets.md)
 * [Resource Specifications](ResourceSpecification.md)
