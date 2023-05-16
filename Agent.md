@@ -31,10 +31,41 @@ Samples from REA Playspace, just informational, or maybe there is some code that
 ![nytl-agent-list-smaller](https://user-images.githubusercontent.com/3776081/232624721-95b9f022-212a-42f9-bc3e-2cc983577550.png)
 ![nytl-agent-smaller](https://user-images.githubusercontent.com/3776081/232624736-21258800-71c3-451b-a633-b59fbe9b1951.png)
 
-
 2 ideas which can be combined:
 
 ![nytl-agent-popup2](https://user-images.githubusercontent.com/3776081/232624062-cc3fa808-7bac-44e9-b23e-27e36678d430.png)
 ![nytl-agent-popup](https://user-images.githubusercontent.com/3776081/232624113-bf43cadb-6f07-44b7-89d8-7ef1460795e8.png)
 
+## Hook UI to hREA
 
+Sample graphql:
+```
+mutation CreateOrganization {
+  createOrganization(
+    organization: {
+      name: "Lazy Acre Alpaca"
+      note: "1234 Some Road, Hudson Valley, NY"
+    }
+  )
+}
+
+query GetOrganization {
+  organization(id: "uhCEklRIkmI3nhepZi4bWgl2L2Cd2TNZV46oWw11Af-KPZNskLLAF:uhC0kk4XetxTAJxYSsm8Z-RRrgfad7VMrOJN45AxB_cA9rMcTW2zr") {
+    id
+    name
+  }
+}
+
+query GetOrganizations {
+  organizations {
+    edges {
+      node {
+        id
+        classifiedAs
+        name
+        note
+      }
+    }
+  }
+}
+```
