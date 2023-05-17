@@ -45,8 +45,16 @@ mutation CreateOrganization {
     organization: {
       name: "Lazy Acre Alpaca"
       note: "1234 Some Road, Hudson Valley, NY"
+      classifiedAs: "lat:123, long:345, role:Farm"
     }
-  )
+  ) {
+    agent {
+      id
+      name
+      note
+      classifiedAs
+    }
+  }
 }
 
 query GetOrganization {
