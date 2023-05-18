@@ -11,6 +11,7 @@ Create a list of resource specs, can be just names.
 
 ### Resource Specification CRUD
 Add agent popup/modal or separate pane (?) with:
+
     - Name (ResourceSpecification.name)
     - Image (ResourceSpecification.image)
     - Default Unit of Resource (ResourceSpecification.defaultUnitOfResource)
