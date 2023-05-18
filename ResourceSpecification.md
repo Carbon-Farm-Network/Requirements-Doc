@@ -10,7 +10,7 @@ Should be all there.  We'll need to load in some units (there won't be very many
 Create a list of resource specs, can be just names.
 
 ### Resource Specification CRUD
-Add agent popup/modal or separate pane (?) with:
+Add popup/modal or separate pane (?) with:
 
     - Name (ResourceSpecification.name)
     - Image (ResourceSpecification.image)
