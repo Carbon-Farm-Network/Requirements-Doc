@@ -24,3 +24,60 @@ Sample from REA Playspace, just informational, or maybe there is some code that 
 
 ![](https://i.imgur.com/MPqKQYd.png)
 ![](https://i.imgur.com/9VaVUA9.png)
+
+### Hook UI to hREA
+
+Sample graphql (note Unit is included because you'll need to make a unit to use in CreateResourceSpecification - Units won't have a CRUD, they can be created from the graphiql interface when hREA is installed and run from the launcher):
+```
+mutation CreateUnit {
+  createUnit(
+    unit: {
+      label: "pound"
+      symbol: "lb"
+    }
+  ){
+    unit {
+      id
+      label
+      symbol
+    }
+  }
+}
+
+query GetUnits {
+  units {
+    edges {
+      node {
+        id
+        label
+        symbol
+      }
+    }
+  }
+}
+
+mutation CreateResourceSpecification {
+  createResourceSpecification(
+    resourceSpecification: {
+      name: "White Alpaca Dirty"
+      image: "https://example.com/alpaca"
+      note: "good stuff"
+      defaultUnitOfResource: "lb:uhC0kQ4nL2SS4GBSV6xKDpcLXYQN98Iy3w-PPXeJk7P4OpNYDYwKb"
+    } 
+  ) {
+    resourceSpecification {
+      id
+      name
+      image
+      note
+      resourceClassifiedAs
+      defaultUnitOfResource {
+        label
+      }
+      defaultUnitOfEffort {
+        label
+      }
+    }
+  }
+}
+```
