@@ -6,7 +6,7 @@ Getting ResourceSpecification done is somewhat a predescessor, although we could
 
 ## hREA
 
-This includes Proposal, ProposedIntent, Intent (one Intent for what is offered, one for the price).  Double check this is all there already.  
+This includes Proposal, ProposedIntent, Intent (one Intent for what is offered, one for the price).  Double check this is all there already.  [2023-05-18 I'm not finding createProposedIntent, checking on this.]
 
 ## UI
 
@@ -78,3 +78,98 @@ Filter by provider agent role, resource specification name, eventually facet val
 - ProposedIntent.publishedIn (the proposal)
 - ProposedIntent.publishes (the Intent)
 - ProposedIntent.reciprocal = true
+
+### Hooking up UI and hREA
+
+Graphql example (**NOT TESTED** can't find createProposedIntent):
+
+```
+mutation CreateProposal {
+  createProposal(
+    proposal: {
+      hasBeginning: "2023-06-01T18:51:57.105Z"
+      unitBased: true
+      note: "shearing end of May"
+    } 
+  ) {
+    proposal {
+      id
+      hasBeginning
+      hasEnd
+      unitBased
+      note
+    }
+  }
+}
+
+
+mutation CreateIntent {
+  createIntent(
+    intent: {
+      provider: "uhCEklRIkmI3nhepZi4bWgl2L2Cd2TNZV46oWw11Af-KPZNskLLAF:uhC0kk4XetxTAJxYSsm8Z-RRrgfad7VMrOJN45AxB_cA9rMcTW2zr" 
+      action: "transfer"
+      resourceConformsTo: "uhCEkAtCeqYLW9TfQinZ3DZRM9Y2pdiqvsTnCAUDH3K-Zg8CDxi1H:uhC0kQ4nL2SS4GBSV6xKDpcLXYQN98Iy3w-PPXeJk7P4OpNYDYwKb"
+      availableQuantity: {
+        hasNumericalValue: 150
+        hasUnit: "lb:uhC0kQ4nL2SS4GBSV6xKDpcLXYQN98Iy3w-PPXeJk7P4OpNYDYwKb"
+      }
+      resourceQuantity: {
+        hasNumericalValue: 1
+        hasUnit: "lb:uhC0kQ4nL2SS4GBSV6xKDpcLXYQN98Iy3w-PPXeJk7P4OpNYDYwKb"
+      }
+      note: "darker gray"
+    } 
+  ) {
+    intent {
+      id
+      provider {
+        name
+      }   
+      action {
+        label
+      }
+      availableQuantity {
+        hasNumericalValue
+        hasUnit {
+          label
+        }
+      }
+      resourceQuantity {
+        hasNumericalValue
+        hasUnit {
+          label
+        }
+      }
+      note
+    }
+  }
+}
+    
+mutation CreateProposedIntent {
+  createProposedIntent(
+    proposedIntent: {
+      reciprocal: false
+      publishedIn: "uhCEkoL69h5kzHKpW5Myr5sGqrVw-5RgUK3YinKR5Mt16s8NVVM77:uhC0kQR4R9RqI_64p9sTSSmVuhWuTBObDDBouNWUd6VkowD2JcN6e"
+      publishes: "uhCEkk6ROlMKmW2x30607ApgOraIsRJwBx2jKS-aZAPZuI0lm3yPo:uhC0krhVnZQlEi1GOkBDy7iZarzCTplj-kxSmmXZvw_hja57Ry0gc"
+    } 
+  ) {
+    proposedIntent {
+      id
+      reciprocal
+      note
+      publishes {
+        id
+        provider {
+          name
+        }
+      	resourceConformsTo {
+          name
+        }
+      }
+      publishedIn {
+        id
+      }
+    }
+  }
+}
+```
