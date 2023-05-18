@@ -29,6 +29,79 @@ This is the Facets and FacetValues within each Facet, for each FacetGroup. These
 
 ![facet-values](https://user-images.githubusercontent.com/3776081/236702049-47c07f88-7c93-4b50-ba20-6111f95b27bc.png)
 
+### Hook up UI and hREA
+
+Example graphql (**NOT TESTED!!**)
+
+```
+mutation CreateFacetGroup {
+  createFacetGroup(
+    facetGroup: {
+      name: "Agent"
+      note: "the agent group"
+    } 
+  ) {
+    facetGroup {
+      id
+      name
+      note
+    }
+  }
+}
+
+mutation CreateFacet {
+  createFacet(
+    facet: {
+      name: "Carbon Beneficial Certification"
+      note: "USDA program for farms"
+    } 
+  ) {
+    facet {
+      id
+      name
+      note
+    }
+  }
+}
+
+mutation CreateFacetValue {
+  createFacetValue(
+    facetValue: {
+      name: "Pending"
+      note: "Organization has applied"
+    } 
+  ) {
+    facetValue {
+      id
+      name
+      note
+    }
+  }
+}
+
+query GetFacetGroups {
+  facetGroups {
+    edges {
+      node {
+        id
+        name
+        note
+        facets {
+          id
+          name
+          note
+          facetValues {
+            id
+            name
+            note
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### Add FacetValue choices
 
 Agent: Add to the Agent CRUD form a way to pick zero or one FacetValue for each Facet in the Agent FacetGroup, store the data.
