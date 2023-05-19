@@ -6,7 +6,7 @@ Getting ResourceSpecification done is somewhat a predescessor, although we could
 
 ## hREA
 
-This includes Proposal, ProposedIntent, Intent (one Intent for what is offered, one for the price).  Double check this is all there already.  [2023-05-18 I'm not finding createProposedIntent, checking on this.]
+This includes Proposal, ProposedIntent, Intent (one Intent for what is offered, one for the price).
 
 ## UI
 
@@ -81,7 +81,7 @@ Filter by provider agent role, resource specification name, eventually facet val
 
 ### Hooking up UI and hREA
 
-Graphql example (**NOT TESTED** can't find createProposedIntent):
+Graphql example:
 
 ```
 mutation CreateProposal {
