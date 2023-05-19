@@ -44,7 +44,9 @@ Filter by provider agent role, resource specification name, eventually facet val
 - Intent.resourceQuantity (Measure.hasNumericalValue)
 - Intent.resourceConformsTo (ResourceSpecification.name, dropdown filtered by.... TBD, set up a facetValue for currencies, or just hard code it for now)
 
-![](https://i.imgur.com/aE1dK0X.png)
+![offer-list](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/ff560542-d4d2-43d9-9749-5ac138afcca8)
+![offer-popup](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/9a6c6d17-6f75-4e40-8e7a-bb879c1c5e9d)
+
 
 **Fields saved:**
 
