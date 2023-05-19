@@ -145,18 +145,15 @@ mutation CreateIntent {
   }
 }
     
-mutation CreateProposedIntent {
-  createProposedIntent(
-    proposedIntent: {
+mutation ProposeIntent {
+  proposeIntent(
       reciprocal: false
       publishedIn: "uhCEkoL69h5kzHKpW5Myr5sGqrVw-5RgUK3YinKR5Mt16s8NVVM77:uhC0kQR4R9RqI_64p9sTSSmVuhWuTBObDDBouNWUd6VkowD2JcN6e"
       publishes: "uhCEkk6ROlMKmW2x30607ApgOraIsRJwBx2jKS-aZAPZuI0lm3yPo:uhC0krhVnZQlEi1GOkBDy7iZarzCTplj-kxSmmXZvw_hja57Ry0gc"
-    } 
   ) {
     proposedIntent {
       id
       reciprocal
-      note
       publishes {
         id
         provider {
