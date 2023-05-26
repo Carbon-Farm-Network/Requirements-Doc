@@ -17,6 +17,12 @@ I don't see putting it into VF until we try it out here.
 
 For us, the FacetGroup will be "hard-coded data", name will be Agent or ResourceSpecification (the class name, which will let our app know which facets to display as choices in the 2 situations).
 
+**Tentative Definitions**
+
+* Facet: A clearly defined aspect of a subject, a semantically cohesive category, if possible mutually exclusive from the other defined facets.
+* FacetValue: A possible value of a facet, mutually exclusive from other values for that facet.
+* FacetGroup: A set of facets relevant to one subject area or part of an application.
+
 ## UI
 
 ### Configuration for the network
