@@ -8,10 +8,9 @@
 
 This needs to be added to hREA, noting that ResourceSpecification and Agent exist.
 
-![facets(1)](https://user-images.githubusercontent.com/3776081/236702414-0709cbde-3edb-49f1-a14d-9442e899ab5e.png)
+![facets(1)(1)(2)(1)](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/e2dd2c78-3161-4586-8d4d-9a0370062dfc)
 
-
-Note that a separate repo has been set up, so that the facets can be used for other holochain applications. See that doc also, in the README of the repo.
+Note that [a separate repo](https://github.com/Carbon-Farm-Network/holochain-facets) has been set up, so that the facets can be used for other holochain applications. See that doc also, in the README of the repo.
 
 I don't see putting it into VF until we try it out here.
 
