@@ -44,6 +44,20 @@ mutation CreateUnit {
     }
   }
 }
+mutation CreateUnit {
+  createUnit(
+    unit: {
+      label: "one"
+      symbol: "1"
+    }
+  ){
+    unit {
+      id
+      label
+      symbol
+    }
+  }
+}
 
 query GetUnits {
   units {
