@@ -57,7 +57,7 @@ Sort by resource specification name, provider name.
 - Intent.resourceConformsTo (screen)
 - Intent.finished (false, or maybe it defaults to that already?)
 - Intent.note (screen description)
-- Intent.action (always "transfer" for now, may want to put it on the screen later)
+- Intent.action (always "transfer" for now, may want to put it on the screen later - note "transfer" is the id)
 - Intent.provider (the offering agent)
 - ProposedIntent.publishedIn (the proposal)
 - ProposedIntent.publishes (the Intent)
