@@ -212,4 +212,18 @@ query GetProposals {
     }
   }
 }
+
+query GetActions {
+  actions {
+    id
+    label
+  }
+}
+
+query GetAction {
+  action (id:"transfer") {
+    id
+    label
+  }
+}
 ```
