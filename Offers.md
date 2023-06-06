@@ -1,6 +1,6 @@
 # Offers
 
-For now, this will be pretty much offers from the farmers, but eventually could include all roles.  When possible, they will want a page where the farmers (and others eventually) can enter their own agent information, and their own offers to the network.
+For now, this will be pretty much offers from the farmers, but eventually could include all roles.  When it becomes possible, they will want a page where the farmers (and others eventually) can enter their own agent information, and their own offers to the network.  At some point (not needed for this phase), they will need a page for designers to enter their needs.
 
 Getting ResourceSpecification done is somewhat a predescessor, although we could just use graphiql to load a few in if needed.
 
@@ -12,37 +12,34 @@ This includes Proposal, ProposedIntent, Intent (one Intent for what is offered, 
 
 ### Offer List
 
-Show all Proposals that have no hasEnd time, or have hasEnd after now.
+Show all Proposals that have no hasEnd time, or where the hasEnd is after now. **NOTE: I don't think we have a way to do that now, so just show all Proposals.**
 
 Fields: 
 
-- provider on main Intent, Agent.name, 
-- resourceSpecification.name (pick from existing)
-- available quantity (number, unit name dropdown)
-- price per unit (number, "USD" or "$") (needs some more thought about units vs resource specs for currency UX)
+- provider on main Intent, Agent.name 
+- offering resourceConformsTo.name on main Intent
+- available quantity: hasNumericalValue, hasUnit.label on main Intent
+- price per unit: (on reciprocal intent, resourceQuantity.hasNumericalValue, resourceConformsTo.name) + " / " + (on main intent, resourceQuantity.hasNumericalValue, hasUnit.label)
 
-Edit, End Offer (which will put the current date/time into Proposal.hasEnd)
+Edit, End Offer (which will put the current date/time into Proposal.hasEnd) - this shows as "Available" on the example, feel free to reverse it if it seems more intuitive to the user.  **OR: We can leave this off for now, it isn't important for the first season.**
 
-Filter by provider agent role, resource specification name, eventually facet values
+Sort by resource specification name, provider name.
 
 
 ### Offer CRUD
 
 **On the screen:**
 
-- Proposal.hasBeginning (date available, default to today)
-
 (main Intent, ProposedIntent.reciprocal=false)
-- Intent.provider (dropdown of agents) - unless we have the agents create the offers **this isn't on the mockup**
-- Intent.resourceConformsTo (ResourceSpecification.name, plus all the FacetValues for the ResourceSpecification filter by ... TBD, set up a facet)
-- Intent.resourceQuantity (Measure.hasNumericalValue + Measure.hasUnit.label)
-- Intent.availableQuantity (Measure.hasNumericalValue + Measure.hasUnit.label)
-- Intent.note
-- Intent.image
+- Intent.provider (dropdown of all agents)
+- Intent.resourceConformsTo.name (dropdown of all ResourceSpecifications)
+- Intent.availableQuantity.hasNumericalValue + .hasUnit.label (dropdown all units, with the ResourceSpecification chosen pre-selected)
+- Intent.resourceQuantity.hasNumericalValue + .hasUnit.label) (after the "PER")
+- Intent.note for description
 
-(reciprocal Intent, ProposedIntent.reciprocal=true)
-- Intent.resourceQuantity (Measure.hasNumericalValue)
-- Intent.resourceConformsTo (ResourceSpecification.name, dropdown filtered by.... TBD, set up a facetValue for currencies, or just hard code it for now)
+(reciprocal Intent, ProposedIntent.reciprocal=true - Price, before the "PER")
+- Intent.resourceQuantity.hasNumericalValue
+- Intent.resourceConformsTo.name  (for now, just hard code "US Dollar" there, we might manage this with facets when they are ready, or we might want to add something to the model)
 
 ![offer-list](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/ff560542-d4d2-43d9-9749-5ac138afcca8)
 ![offer-popup](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/9a6c6d17-6f75-4e40-8e7a-bb879c1c5e9d)
@@ -50,21 +47,17 @@ Filter by provider agent role, resource specification name, eventually facet val
 
 **Fields saved:**
 
-- Proposal.hasBeginning (screen, default date created)
-- Proposal.hasEnd (screen, if no longer available is checked, save current date - or just provide this on the list?)
-- Proposal.inScopeOf (the network agent - or don't worry for now, since there is just one scope here)
+- Proposal.hasBeginning (screen)
 - Proposal.unitBased = true
-- Proposal.created (current date when created)
+- Proposal.created (current date/time)
 
 (main Intent)
 - Intent.resourceQuantity (screen)
 - Intent.availableQuantity (screen)
 - Intent.resourceConformsTo (screen)
-- Intent.image (screen)
-- Intent.inScopeOf (the network agent)
-- Intent.finished (false until no longer available is checked, then true)
+- Intent.finished (false, or maybe it defaults to that already?)
 - Intent.note (screen description)
-- Intent.action (always "transfer"??? might also be "deliverService"; maybe even "work", others??? - Lynn think about it)
+- Intent.action (always "transfer" for now, may want to put it on the screen later)
 - Intent.provider (the offering agent)
 - ProposedIntent.publishedIn (the proposal)
 - ProposedIntent.publishes (the Intent)
@@ -73,11 +66,10 @@ Filter by provider agent role, resource specification name, eventually facet val
 (reciprocal Intent, the "price")
 - Intent.resourceQuantity (screen numeric value, unit = "one")
 - Intent.resourceConformsTo (screen)
-- Intent.inScopeOf (the network agent)
-- Intent.finished (false until no longer available is checked, then true)
+- Intent.finished (false, or maybe that is the default?)
 - Intent.action (always "transfer")
 - Intent.receiver (the offering agent)
-- ProposedIntent.publishedIn (the proposal)
+- ProposedIntent.publishedIn (the Proposal)
 - ProposedIntent.publishes (the Intent)
 - ProposedIntent.reciprocal = true
 
