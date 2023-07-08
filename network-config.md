@@ -2,7 +2,7 @@
 
 This list will grow throughout the project.  But I think it makes sense to have one page for this.  The details may change as we code the pages that need this.
 
-For the upper right in the UI:
+For the upper left in the UI:
 
 * Network logo (upload)
 * Network name (if not in the logo)
