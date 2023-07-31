@@ -8,11 +8,22 @@ To start with, just a create mutation for each Commitment, and one for the Agree
 
 ## UI
 
-The order will pre-fill some information from the offer.
-
 **On the screen:**
 
+![cfn-order-spec](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/15bc9aa5-9ded-467e-85a6-8605c7e3d4ce)
 
+Pre-filled and not editable, taken from the offer:
+* Provider
+* Action
+* Resource spec
+* Unit
+* Currency
+
+Pre-filled and editable:
+* Ordered quantity (use the offer's available quantity)
+* Payment quantity (multiply the ordered quantity by the offer's price)
+
+On the screen, when the ordered quantity is changed, re-multiple by the price and put in a new payment quantity.  They can then override the payment quantity if they want.
 
 **Fields saved:**
 
