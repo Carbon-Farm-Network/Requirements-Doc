@@ -11,4 +11,5 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Facets](Facets.md)
 * [Resource Specifications](ResourceSpecification.md)
 * [Offers](Offers.md)
+* [Requests](Requests.md)
 * [Order](Order.md)
