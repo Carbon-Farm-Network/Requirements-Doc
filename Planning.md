@@ -5,13 +5,13 @@
 
 Pieces of code:
 
-* CRUD recipes
-* Plan from recipe (creates a plan, or a scenario - works for mfg/assembly and workflow patterns)
+* CRUD recipes (we are thinking to hard code these to start)
+* Plan from recipe (creates a scenario with intents - works for mfg/assembly and workflow patterns)
 * Planning page initial display (offers, requests, plan columns)
 * Calculate supply-driven quantities, display on page
 * Calculate demand-driven quantities, display on page
-* User can play with the numbers, create/edit commitment quantities separately from the calculated ones (is this a Scenario or a Plan? should we show payments/costs?)
-* Lock in plan (create actual commitments, is this one at a time, or the whole thing, or both?  include payment commitment)
+* User can play with the numbers, create/edit commitment quantities separately from the calculated ones (should we show payments/costs?)
+* Lock in plan (create a plan with actual commitments, is this one at a time, or the whole thing, or both?  include payment commitment)
 * Notify suppliers of orders (send to them by email?)
 
 Then, after the plan is done:
