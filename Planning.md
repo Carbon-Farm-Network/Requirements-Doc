@@ -6,7 +6,7 @@
 Pieces of code:
 
 * CRUD recipes
-* Plan from recipe (creates a plan, or a scenario)
+* Plan from recipe (creates a plan, or a scenario - works for mfg/assembly and workflow patterns)
 * Planning page initial display (offers, requests, plan columns)
 * Calculate supply-driven quantities, display on page
 * Calculate demand-driven quantities, display on page
