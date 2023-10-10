@@ -6,14 +6,13 @@
 Pieces of code:
 
 * CRUD recipes
-* Plan from recipe (creates a plan)
-* Planning page inital paint (offers, requests, plan columns)
-* Calculate supply-driven quantities
-* Calculate demand-driven quantities
-* User can play with the numbers, create commitment quantities (is this a Scenario or a Plan?)
-* Lock in plan (create actual commitments, is this one at a time, or the whole thing?)
-* Create orders with suppliers
-
+* Plan from recipe (creates a plan, or a scenario)
+* Planning page initial display (offers, requests, plan columns)
+* Calculate supply-driven quantities, display on page
+* Calculate demand-driven quantities, display on page
+* User can play with the numbers, create/edit commitment quantities separately from the calculated ones (is this a Scenario or a Plan? should we show payments/costs?)
+* Lock in plan (create actual commitments, is this one at a time, or the whole thing, or both?  include payment commitment)
+* Notify suppliers of orders (send to them by email?)
 
 Then, after the plan is done:
 
