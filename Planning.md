@@ -11,6 +11,11 @@ Pieces of code:
 * Calculate supply-driven quantities
 * Calculate demand-driven quantities
 * User can play with the numbers, create commitment quantities (is this a Scenario or a Plan?)
-* Lock in plan (create actual commitments)
+* Lock in plan (create actual commitments, is this one at a time, or the whole thing?)
 * Create orders with suppliers
+
+
+Then, after the plan is done:
+
+* Enter actual economic events against the commitments
 * 
