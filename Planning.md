@@ -6,17 +6,21 @@
 Pieces of code:
 
 * CRUD recipes (we are thinking to hard code these to start)
-* Plan from recipe (creates a scenario with intents - works for mfg/assembly and workflow patterns)
+   * Recipes are not in hREA I think, need to be added from scratch on backend
+* Plan from recipe (creates a plan with intents - works for mfg/assembly and workflow patterns)
+   * Add ...?
 * Planning page initial display (offers, requests, plan columns)
+   * Add image to ProcessSpecification
 * Calculate supply-driven quantities, display on page
 * Calculate demand-driven quantities, display on page
-* User can play with the numbers, create/edit commitment quantities separately from the calculated ones (should we show payments/costs?)
+* User can play with the numbers, create/edit intent quantities separately from the calculated ones (should we show payments/costs?)
 * Lock in plan (create a plan with actual commitments, is this one at a time, or the whole thing, or both?  include payment commitment)
-* Notify suppliers of orders (send to them by email?)
+* Notify suppliers of orders (send to them by email?  list?)
 
 Then, after the plan is done:
 
 * Enter actual economic events against the commitments
+* List (start of the accounting....)
 
 # Followups to morning discussion:
 
