@@ -5,6 +5,9 @@
 
 Pieces of code:
 
+* CRUD ProcessSpecifications
+   * Add image to ProcessSpecification in the backend
+   * List and modal create/update/delete ProcessSpecification, under config menu
 * CRUD recipes (we are thinking to hard code these to start)
    * Recipes are not in hREA I think, need to be added from scratch on backend
    * Design a UI that will work for one-process recipes; but some people will need multi-process recipes
@@ -13,8 +16,6 @@ Pieces of code:
    * Create Plan with Intents, demand-driven, using requests as independent demand, "squashing" as needed
    * Do we need anything more?  Or can it figure out all the correct order?
 * Planning page initial display (offers, requests, plan columns with plan)
-   * Add image to ProcessSpecification in the backend
-   * CRUD ProcessSpecification, under config menu
 * (Re)Calculate supply-driven quantities, display on page
 * (Re)Calculate demand-driven quantities, display on page
 * User can play with the numbers, create/edit intent quantities separately from the calculated ones (should we show payments/costs?)
@@ -24,7 +25,7 @@ Pieces of code:
 Then, after the plan is done:
 
 * Enter actual economic events against the commitments
-* List (start of the accounting....)
+* List of economic events (start of the accounting....)
 
 # Followups to morning discussion:
 
