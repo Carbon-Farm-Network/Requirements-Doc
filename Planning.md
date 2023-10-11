@@ -16,6 +16,7 @@ Pieces of code:
    * Create Plan with Intents, demand-driven, using requests as independent demand, "squashing" as needed
    * Do we need anything more?  Or can it figure out all the correct order?
 * Planning page initial display (offers, requests, plan columns with plan)
+   * Visually flag issues (not enough or too much of something)
 * (Re)Calculate supply-driven quantities, display on page
 * (Re)Calculate demand-driven quantities, display on page
 * User can play with the numbers, create/edit intent quantities separately from the calculated ones (should we show payments/costs?)
