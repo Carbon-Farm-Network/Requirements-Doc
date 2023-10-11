@@ -7,9 +7,11 @@ Pieces of code:
 
 * CRUD recipes (we are thinking to hard code these to start)
    * Recipes are not in hREA I think, need to be added from scratch on backend
-* Plan from recipe (creates a plan with intents - works for mfg/assembly and workflow patterns)
-   * Add ...?
-* Planning page initial display (offers, requests, plan columns)
+   * Design a UI that will work for one-process recipes; but some people will need multi-process recipes
+   * Include stage
+* Plan from recipe (works for mfg/assembly and workflow patterns)
+   * Create Plan with Intents, demand-driven, using requests as independent demand, "squashing" as needed
+* Planning page initial display (offers, requests, plan columns with plan)
    * Add image to ProcessSpecification
 * Calculate supply-driven quantities, display on page
 * Calculate demand-driven quantities, display on page
