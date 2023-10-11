@@ -11,12 +11,14 @@ Pieces of code:
    * Include stage
 * Plan from recipe (works for mfg/assembly and workflow patterns)
    * Create Plan with Intents, demand-driven, using requests as independent demand, "squashing" as needed
+   * Do we need anything more?  Or can it figure out all the correct order?
 * Planning page initial display (offers, requests, plan columns with plan)
-   * Add image to ProcessSpecification
-* Calculate supply-driven quantities, display on page
-* Calculate demand-driven quantities, display on page
+   * Add image to ProcessSpecification in the backend
+   * CRUD ProcessSpecification, under config menu
+* (Re)Calculate supply-driven quantities, display on page
+* (Re)Calculate demand-driven quantities, display on page
 * User can play with the numbers, create/edit intent quantities separately from the calculated ones (should we show payments/costs?)
-* Lock in plan (create a plan with actual commitments, is this one at a time, or the whole thing, or both?  include payment commitment)
+* Lock in plan (create a plan with actual commitments, is this one at a time, or the whole thing, or both? > probably best to allow one at a time;  include payment commitment and agreement)
 * Notify suppliers of orders (send to them by email?  list?)
 
 Then, after the plan is done:
