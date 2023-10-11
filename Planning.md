@@ -14,6 +14,7 @@ Pieces of code:
    * Include stage
 * Plan from recipe (works for mfg/assembly and workflow patterns)
    * Create Plan with Intents, demand-driven, using requests as independent demand, "squashing" or "expanding" as needed
+   * Add minimumQuantity to Intent in hREA and to Offer UIs
    * Do we need anything more?  Or can it figure out all the correct order?
 * Planning page display (offers, requests, plan columns with plan)
    * Visually flag issues (not enough or too much of something)
