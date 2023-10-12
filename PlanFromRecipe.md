@@ -9,4 +9,7 @@ Trying to create pseudocode by mining the Django code.
 
 ## Spelunking
 
+In the template:
+  <input type="submit" name="create-order" id="createOrder" value="{% trans 'Create plan from recipe' %}"
+In the view:
 
