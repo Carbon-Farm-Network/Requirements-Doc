@@ -17,6 +17,7 @@ Pieces of code:
        * Choose all the independent demand intents (all the yarn requests)
        * Should we put something in the recipe to say intent or commitment created?  and create what it says?
    * Add minimumQuantity to Intent in hREA and to Offer UIs
+   * We'll need delete Plan fairly soon, so they can experiment, and fine tune the recipes.
    * Do we need anything more?  Or can it figure out all the correct order?
 * Planning page display (offers, requests, plan columns with plan)
    * Visually flag issues (not enough or too much of something) >> logic on client?
