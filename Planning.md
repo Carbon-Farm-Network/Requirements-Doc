@@ -44,7 +44,8 @@ Stashing the visual here (first version for discussion):
 ![cfn-recipes](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/f6caf87f-332f-4d8d-9377-edcc264f5950)
 
 Tentatively thinking this:
-![cfn-recipes-use](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/a3b3bb94-2f0f-4540-9cce-4e9038e48d86)
+![cfn-recipes-use](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/48802e81-c2c2-4ab8-ab16-b0e5f597d8c8)
+
 
 
 
