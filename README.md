@@ -13,3 +13,6 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Offers](Offers.md)
 * [Requests](Requests.md)
 * [Order](Order.md)
+
+## User Doc
+* [Minimal doc for Release 1](user-rel1.md)
