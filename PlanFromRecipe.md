@@ -1,4 +1,4 @@
-# Plan from Recipe
+# Plan from Recipe - In Process!
 
 Trying to create pseudocode by mining the Django code.
 
