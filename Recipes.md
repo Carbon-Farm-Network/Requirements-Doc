@@ -12,10 +12,10 @@ Here is the model (blue is new).
 
 For CFN, I think they will have only one-process recipes, with that process's inputs and outputs.  (Other use cases will probably require multiple processes per recipe, but we don't have to worry about that now in terms of the UI.  And the data model is basically the same too.)
 
-1. Add `substitutable` to ResourceSpecification. (This can also wait until later, I'm not sure we need it for this use case.  In fact, since there is an open modeling question involved there, it might be best to wait anyhow.)
+1. Add `substitutable` to ResourceSpecification. (This can also wait until later, I'm not sure we need it for this use case.)
 2. Two new classes: `RecipeProcess` and `RecipeFlow`.  And their relationships.  They have basically the same structure as `Process` and `Commitment`; or `Process` and `EconomicEvent`; or `Process` and `Intent`.  A process with it's input and output flows.  The main way the relationships work is from `RecipeFlow` to `Process`.  (We'll eventually want queries that go the other direction.)  You can find the same properties and copy them from those existing classes, should be the same datatypes.
 3. Add graphql api for the new classes.  Need Create, Update, Delete.  Deleting a `RecipeProcess` should cascade to its `RecipeFlow`s.  To save time, we could skip Update for now if we want.  Again, you can copy from `Process` and `Commitment` (or `Intent` or `EconomicEvent`) and adjust the naming.
-4. I kept `RecipeExchange` in the picture, because if you use the schema generation, it will be there.  I don't think we need it for CFN, so you can just comment or stub it out.
+4. I kept `RecipeExchange` in the picture, because if you use the schema generation, it will be there, and is a new class.  I don't think we need it for CFN, so you can just comment or stub it out.
 
 ## UI
 
