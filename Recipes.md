@@ -8,7 +8,7 @@ This needs to be added to hREA, including the graphql api.  Figure out the techn
 
 Here is the model (blue is new).
 
-![recipes](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/400efca6-7b3f-404e-ae3a-5ac48bd40e5a)
+![recipes](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/13212e0f-5ccb-4b87-91be-55d43523759d)
 
 For CFN, I think they will have only one-process recipes, with that process's inputs and outputs.  (Other use cases will probably require multiple processes per recipe, but we don't have to worry about that now in terms of the UI.  And the data model is basically the same too.)
 
