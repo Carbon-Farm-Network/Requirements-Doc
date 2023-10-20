@@ -40,14 +40,14 @@ Process:
 * Process specification - RecipeProcess.processConformsTo.name (a drop down of all ProcessSpecifications) - required
 
 Input (for each one):
-* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is Input) - required
+* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is input) - required
 * Quantity, Unit (like on Offers) - RecipeFlow.resourceQuantity (drop down on units) - required
 * Resource Specification - RecipeFlow.resourceConformsTo (drop down of all RSs) - required
 * Stage - RecipeFlow.stage (drop down of ProcessSpecification.name), text something like "choose if this resource must come from a specific process specification" - optional
 * Description - RecipeFlow.note - optional
 
 Output (for each one):
-* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is Output) - required
+* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is output or outputInput) - required
 * Quantity, Unit (like on Offers) - RecipeFlow.resourceQuantity (drop down on units) - required
 * Resource Specification - RecipeFlow.resourceConformsTo (drop down of all RSs) - required
 * Description - RecipeFlow.note - optional
