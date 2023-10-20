@@ -21,9 +21,40 @@ For CFN, I think they will have only one-process recipes, with that process's in
 
 This will be a new menu item on the "config" menu from the upper right person icon.  "Recipes".  It can probably be a list + CUD modal, like the others, but it is a more complex data structure.
 
-I'm not sure the best UX for this, will work on something.  The process plus inputs and outputs should be on the same page.  Ideas welcome.
+### List
 
-One other:  Add "substitutable" to the ResourceSpecification modal.  Some text would be good, like "Any item of this specification can be substituted for any other".
+Like the other lists, with an Add Recipe button.  In each list item: Inputs, Process, Outputs.  See if we can fit that on one line across the page.
+
+* Inputs: comma separated list of resourceConformsTo (resource specification) names of all the inputs
+* Process: the process name
+* Outputs: comma separated list of  resourceConformsTo (resource specification) names of all the outputs
+
+### Modal (or a whole page)
+
+Process with it's inputs and outputs on one page.  Think about how to lay out the most intuitively, but also the cleanest to code, since this is an infrequently used configuration.
+
+Process:
+* Name - RecipeProcess.name - required
+* Description - RecipeProcess.note - optional
+* Calendar time - RecipeProcess.hasDuration (numericDuration + unitType) (If Duration isn't implemented, then just skip this.) - optional
+* Process specification - RecipeProcess.processConformsTo.name (a drop down of all ProcessSpecifications) - required
+
+Input (for each one):
+* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is Input) - required
+* Quantity, Unit (like on Offers) - RecipeFlow.resourceQuantity (drop down on units) - required
+* Resource Specification - RecipeFlow.resourceConformsTo (drop down of all RSs) - required
+* Stage - RecipeFlow.stage (drop down of ProcessSpecification.name), text something like "choose if this resource must come from a specific process specification" - optional
+* Description - RecipeFlow.note - optional
+
+Output (for each one):
+* Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is Output) - required
+* Quantity, Unit (like on Offers) - RecipeFlow.resourceQuantity (drop down on units) - required
+* Resource Specification - RecipeFlow.resourceConformsTo (drop down of all RSs) - required
+* Description - RecipeFlow.note - optional
+
+### New field:  
+
+Add "substitutable" to the ResourceSpecification modal - true, false, or null.  Some text would be good, like "Any item of this specification can be substituted for any other".  Could default in the list to true.
 
 ## Data
 
