@@ -1,5 +1,10 @@
 # Plan from Recipe 
 
+## Additions to hREA
+
+1. Add `substitutable` to ResourceSpecification.  It used to be in RecipeResource, which is now gone.  It is a boolean, but should also allow null or whatever is the right thing for this tech, if possible.
+2. Add `minimumQuantity` to Intent.  It should look just like `availableQuantity`, and is also optional.
+
 ## Attach UI to hREA
 
 ### Bring in offers and requests to Planning page
