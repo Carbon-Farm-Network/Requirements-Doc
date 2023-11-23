@@ -34,13 +34,14 @@ Create the data for the commitments in the Satisfy Requests column:
 
 This is new in VF, not yet tried in an app.  Be prepared for experimentation. :)
 
-When a Commitment is created, either in Satisfy Requests or the All Columns portion of the plan, whether created by us in the plan-from-recipe logic or by them with a create modal:
+When a Commitment is created, either in Satisfy Requests or the All Columns portion of the plan, whether created in the plan-from-recipe logic or with a create modal:
 
 * Look up to see if there is an exchange recipe (a `recipeClauseOf` RecipeFlow that is attached to a RecipeExchange, for the `resourceConformsTo` and the `stage` (if there is a stage) matching the data in the Commitment just created.
 * If not, nothing to do.
 * If so, using the recipe data,
     * create an Agreement (`name` and `note` from RecipeExchange, `created` use current timestamp)
-    * create a Commitment (the new Agreement as `reciprocalClauseOf`, `finished` false, `resourceConformsTo` and `stage` and `action` and `resourceConformsTo` and `note` from the RecipeFlow, `created` as current timestamp) 
+    * look up to see if there is a Proposal (offer or request) from the Agent in the main Intent for the same `resourceConformsTo` (what about stage????), if so look in the reciprocal Intent for the `resourceQuantity` to use below
+    * create a Commitment (the new Agreement as `reciprocalClauseOf`, `finished` false, `resourceConformsTo` and `stage` and `action` and `resourceConformsTo` and `note` from the RecipeFlow, `created` as current timestamp, if offer or request exists, `resourceQuantity.hasNumericalValue` is main quantity * the reciprocal `resourceQuantity.hasNumericalValue`, else it is main quantity * the recipe quantity)
     * to the Commitment that triggered the exchange, add the new Agreement as `clauseOf`
  
 When a Commitment is deleted, whether by the user, or because our plan-from-recipe is re-run, if there is also an Agreement, also delete the Agreement and any other Commitment clauses.
