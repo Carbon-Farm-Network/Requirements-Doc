@@ -45,3 +45,11 @@ When a Commitment is created, either in Satisfy Requests or the All Columns port
     * to the Commitment that triggered the exchange, add the new Agreement as `clauseOf`
  
 When a Commitment is deleted, whether by the user, or because our plan-from-recipe is re-run, if there is also an Agreement, also delete the Agreement and any other Commitment clauses.
+
+### Calculate Instructions
+
+I added a new field to RecipeFlow called `instructions`.  It is a code of sorts: SumInputs, SumOutputs, UseOffers are the current possible values. It is used as the plan is created.
+
+* SumInputs totals all (other) input quantities of that process, uses that for the commitment quantity.
+* SumOutputs totals all the (other) output quantities of that process, uses that for the commitment quantity.
+* UseOffers creates a commitment for each offer (primary Intent) that matches the `resourceConformsTo`. Each of those commitments uses the `resourceQuantity` from the offer (primary Intent).
