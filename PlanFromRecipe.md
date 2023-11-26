@@ -4,6 +4,7 @@
 
 1. Add `substitutable` to ResourceSpecification.  It used to be in RecipeResource, which is now gone.  It is a boolean, but should also allow null or whatever is the right thing for this tech, if possible.
 2. Add `minimumQuantity` to Intent.  It should look just like `availableQuantity`, and is also optional.
+3. NEW Nov26 - Add `reciprocalClauseOf` to Commitment, pointing to Agreement.  It should look like `clauseOf`.
 
 ## Attach UI to hREA
 
@@ -22,6 +23,7 @@ There's a button Save Plan on the planning page, with a modal when clicked, incl
 * create a `Plan` in hREA: `name` and `note` come from the modal. use current timestamp for `created`.
 * for each process in memory (`allColumns`), create a `Process` in hREA: Include `name`, `note`, `plannedWithin` (the `Plan` just created), `basedOn` (the `ProcessSpecification` referenced), default `finished` to false unless that is done by hREA already.
 * for each `Process` created, for each commitment `inputOf`, and each commitment `outputOf` the `Process`, create a `Commitment`: reference the `Process` `inputOf` or `outputOf`, `action`, optionally `stage` (a `ProcessSpecification`), `resourceConformsTo` (a `ResourceSpecification`), a `resourceQuantity` (includes `hasNumericalValue` and `hasUnit` which is a Unit from the list), default `finished` to false unless that is done by hREA already, optionally `note`,  use current timestamp for `created`, optionally `provider` (an `Agent`), optionally `receiver` (an `Agent`).
+* NEW Nov26 - some of the commitments will also have exchange information - like commitment to deliver a service, or when fiber is picked up from the farm will both now have an `Agreement` and a reciprocal `Commitment` for the promise from CFN to pay the supplier.  The agreement ties together reciprocal commitments, one of which already exists as part of the production plan.  `Agreement` has `name` and `note` in the data, and you can add `created` as current timestamp. The existing `Commitment` should have `clauseOf` added, referencing the `Agreement just created.  The new `Commitment` should reference the `Agreement` with `reciprocalClauseOf` (new above), or if you don't want to add that yet, just use `clauseOf`; `action` is `transfer`, and the following are as above: `resourceConformsTo`, `resourceQuantity`, `finished`, `note`,  `created`; `provider` is the same as receiver on the original commitment, `receiver` is the same as provider on the original commitment.
 
 Create the data for the commitments in the Satisfy Requests column:
 
