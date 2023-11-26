@@ -6,7 +6,9 @@ This needs full stack implementation, backend, graphql, UI.
 
 This needs to be added to hREA, including the graphql api.  Figure out the technical part.  Probably its own zome, maybe also DNA?
 
-Here is the model (blue is new).
+Here is the model (blue is new).  
+
+**NEW Nov26** One new relationship on the model:  Add another relationship called recipeReciprocalClauseOf in RecipeFlow, referencing RecipeExchange.  It should look just like recipeClauseOf.
 
 ![recipes](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/13212e0f-5ccb-4b87-91be-55d43523759d)
 
