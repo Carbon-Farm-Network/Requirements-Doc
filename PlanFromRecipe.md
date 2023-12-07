@@ -30,6 +30,88 @@ Create the data for the commitments in the Satisfy Requests column:
 * for each commitment (in `commitments` in memory), create a `Commitment` in hREA: include `action`, optionally `provider`, `receiver`, optionally `stage`, `resourceConformsTo`, `resourceQuantity`, `finished` as false, optionally `note`,  use current timestamp for `created`, and `independentDemandOf` (references the `Plan`).
 * also for each commitment, create a `Satisfaction` record that is `satisfiedBy` the `Commitment` and `satisfies` the `Intent` that is on the `Proposal` request from the designer, and has `resourceQuantity`, in this case the same value as the one in the commitment.
 
+### Get back the plan data
+
+The at least doesn't give any errors, but isn't tested with data.  You'll need to just get one plan with an id, but the guts of this structure should be approximately right.
+```
+query GetPlans {
+  plans {
+    edges {
+      node {
+        id
+        name
+        independentDemands {
+          id
+          receiver {
+            id
+            name
+          }
+          resourceQuantity {
+            hasNumericalValue
+            hasUnit {
+              label
+            }
+          }
+          resourceConformsTo {
+            id
+            name
+          }
+        }
+        processes {
+          id
+          name
+          basedOn {
+            name
+          }
+          committedInputs {
+            id
+            provider {
+              id
+              name
+            }
+            receiver {
+              id
+              name
+            }
+            resourceQuantity {
+              hasNumericalValue
+            	hasUnit {
+              	label
+            	}
+            }
+            resourceConformsTo {
+              id
+              name
+            }
+          }
+          committedOutputs {
+            id
+            provider {
+              id
+              name
+            }
+            receiver {
+              id
+              name
+            }
+            resourceQuantity {
+              hasNumericalValue
+            	hasUnit {
+              	label
+            	}
+            }
+            resourceConformsTo {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ## UI Work
 
 ### Recipe Exchanges in Memory (before save plan)
