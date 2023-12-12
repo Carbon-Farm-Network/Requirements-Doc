@@ -5,6 +5,7 @@
 1. Add `substitutable` to ResourceSpecification.  It used to be in RecipeResource, which is now gone.  It is a boolean, but should also allow null or whatever is the right thing for this tech, if possible.
 2. Add `minimumQuantity` to Intent.  It should look just like `availableQuantity`, and is also optional.
 3. NEW Nov26 - Add `reciprocalClauseOf` to Commitment, pointing to Agreement.  It should look like `clauseOf`.
+4. NEW Dec12 - Add `image` to ProcessSpecification.  Should look just like other images in other classes.
 
 ## Attach UI to hREA
 
