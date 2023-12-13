@@ -84,6 +84,17 @@ query GetPlans {
               id
               name
             }
+            clauseOf {
+              commitments {
+                id
+                resourceQuantity {
+                  hasNumericalValue
+                  hasUnit {
+                    label
+                  }
+                }
+              }
+            }
           }
           committedOutputs {
             id
@@ -104,6 +115,17 @@ query GetPlans {
             resourceConformsTo {
               id
               name
+            }
+            clauseOf {
+              commitments {
+                id
+                resourceQuantity {
+                  hasNumericalValue
+                  hasUnit {
+                    label
+                  }
+                }
+              }
             }
           }
         }
