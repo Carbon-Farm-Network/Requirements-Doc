@@ -21,4 +21,4 @@ This repo contains documentation of the application requirements for the hREA-ba
 
 ## Demos
 
-* [Demo 1: Setup, Offers/Requests, start Planning](demo1.md)
+* [Demo 1: Setup, Offers/Requests, start Planning](https://github.com/Carbon-Farm-Network/app-carbon-farm-network/wiki/Demo:--Setup,-Offers-Requests,-Planning-(start))
