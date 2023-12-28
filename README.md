@@ -2,7 +2,7 @@
 
 This repo contains documentation of the application requirements for the hREA-based Carbon Farm Network application.  It will be used to gather thoughts along with discussion, and is not meant to be an extremely formal set of documents.
 
-## Table of Contents
+## Specifications
 
 * [Useful Links](Links.md)
 * [General UX](GeneralUX.md)
@@ -16,4 +16,9 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Recipes](Recipes.md)
 
 ## User Doc
+
 * [Minimal doc for Release 1](user-rel1.md)
+
+## Demos
+
+* [Demo 1: Setup, Offers/Requests, start Planning](demo1.md)
