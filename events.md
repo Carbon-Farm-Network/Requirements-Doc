@@ -2,11 +2,13 @@
 
 This will support adding economic events that are based on the planned commitments.
 
-Each commitment should have a symbol added (beside the update and delete symbols) to indicate add/update an event.  Or a button, suggestions welcome.  (To keep things simple for this page, we can for now assume only one event per commitment.  That will be mostly true for the CFN, possibly not as much for other networks.  We will add a place on another page to allow more events per commitment.)
-
 ## UI
 
 ### Adding an event
+
+Each commitment should have a symbol added (beside the update and delete symbols) to indicate add/update an event.  Or a button, suggestions welcome.  (To keep things simple for this page, we can for now assume only one event per commitment.  That will be mostly true for the CFN, possibly not as much for other networks.  We will add a place on another page to allow more events per commitment.)
+
+Pressing the symbol/button should bring up a modal.
 
 Fields to include:
 
