@@ -23,6 +23,7 @@ Fields to include:
 *Optional, do if there is extra time:* If the commitment is also part of an agreement (i.e. is showing the cost $), then also allow add/update of an event for that reciprocal commitment:
 
 * Payment quantity (numeric value + resource spec name, i.e. "Currency" like in offers modal) - default from reciprocal commitment
+* Tracking identifier (for check numbers, etc.)
 * Description
 
 On the UI, update the background color of the commitment:  If an event was saved with the Commitment finished not checked, then make it light yellow (started).  If an event was saved with the Commitment finished checked, then make it light green (complete).
