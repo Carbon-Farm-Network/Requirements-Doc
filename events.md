@@ -16,6 +16,7 @@ Fields to include:
 * Resource quantity (numeric value + unit) - default from commitment
 * Date - default current
 * Description
+* Commitment finished - default true (can be a checkbox)
 
 *Optional, do if there is extra time:* If the commitment is also part of an agreement (i.e. is showing the cost $), then also allow add/update of an event for that reciprocal commitment:
 
@@ -24,5 +25,10 @@ Fields to include:
 
 ### Updating an event
 
-For now, we won't do that, mostly it is not allowed anyhow.  We can always put what is allowed on another page later.
+For now, we won't do that, mostly it is not allowed anyhow.  We can always put what is allowed on another page later.  Also, events can't be deleted.
 
+## Saving in hREA
+
+Save the EconomicEvent, save the Fulfillment, using the same quantities as are on the EconomicEvent, and referencing the EconomicEvent and the Commitment.
+
+If the Commitment finished flag is checked, set Commitment.finished to true.
