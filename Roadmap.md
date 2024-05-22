@@ -24,9 +24,9 @@ High level features to prioritize (can be broken up too):
 * Permissions, agent upgrade, onboarding, role-based-UIs (or break out)
 * ?
 
-Thoughts from Lynn 5/22:
+Thoughts from Lynn 5/22, other comments welcome:
 
-I'm re-adjusting to needing to have (alpha) production-ready code early in June.  Planning is one thing, accounting is another.  (Earlier we were prioritizing to get a demo for fundraising, we never made it.)  One thought is to comment out the ability to enter events until we build them out properly.  (Try to get a video demo first, and keep the old version handy too.)  But in general, prioritize what the CFN needs next, next, next, etc., and iterate closely with them, it is important that we can take advantage of users facing actual problems (not bugs, problems in their coordination work that need support in the software).  This will mean doing minimally useable features with user-driven refinements, and leaving background refinements until later.  (We have been doing that anyhow.)
+I'm re-adjusting my thinking to needing to have (alpha) production-ready code early in June.  Planning is one thing, accounting is another.  (Earlier we were prioritizing to get a demo for fundraising, we never made it.)  One thought is to comment out the ability to enter events until we build them out properly.  (Try to get a video demo first, and keep the old version handy too.)  But in general, prioritize what the CFN needs next, next, next, etc., and iterate closely with them, it is important that we can take advantage of users facing actual problems (not bugs, problems in their coordination work that need support in the software).  This will mean doing minimally useable features with user-driven refinements, and leaving background refinements until later.  (We have been doing that anyhow.)
 
 But we still need to get some funding as quickly as possible.  We need people to work actively on that.  (Not me.)
 
