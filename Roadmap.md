@@ -7,12 +7,14 @@ As of May 22, we are later than we hoped, which is not unexpected for a project 
 * Make the app completely configurable and usable enough for other networks to at least try it out, starting with Fibershed networks
 * Catch hREA up with VF, so it doesn't become hopelessly behind as other projects use it, then catch CFN up with hREA (not only a CFN responsibility, but I do think of user groups supporting upgrade of underlying infrastructure as they develop their apps); also other technical debt
 
-CFN schedule:
+CFN schedule (approximate):
 * Pickup fiber, June 2-5
-* Scouring,
-* Spinning,
-* ???
-* Start planning next season, Jan 2025 ?
+* Ship fiber to Baiton for scouring June 10th
+* Ship clean fiber to Kraemer for spinning July 22nd
+* Spinning completed at Kraemer by Aug 26th
+* Yarns shipped to Simply Knitting Sept 1st
+* Production at Simply Knitting completed for designers (there will be a queue for this for each brand) by Sept 16
+* Start planning next season, Jan 2025 
 
 High level features to prioritize (can be broken up too):
 * Finish initial planning (recipes, bug fixes, UX upgrades for more computer assistance)
