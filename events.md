@@ -37,3 +37,30 @@ For now, we won't do that, mostly it is not allowed anyhow.  We can always put w
 Save the EconomicEvent, save the Fulfillment, using the same quantities as are on the EconomicEvent, and referencing the EconomicEvent and the Commitment.
 
 If the Commitment finished flag is checked, set Commitment.finished to true.
+
+## Affecting EconomicResource
+
+See in VF:
+
+* https://www.valueflo.ws/concepts/resources/#how-resources-relate-to-events
+* https://www.valueflo.ws/concepts/resources/#how-resources-relate-to-transfers
+* https://www.valueflo.ws/concepts/actions/ especially starting here https://www.valueflo.ws/concepts/actions/#action-behaviors and the chart (this defines what an event should do (or not do) to a resource)
+
+Whenever an EconomicEvent is saved, it should decide if it should also create or update an EconomicResource.  First this depends on the action, not all actions have inventoried/instantiated EconomicResources.  There is generally a user choice if a resource should be created, but I think for CFN, all resources that can be inventoried will be inventoried. So probably, just the deliverService events won't affect a resource.  If we're not keeping track of location (and I don't think we are until we have a real object instead of lat/long), then transportation won't affect the resource either.  Except onhandQuantity, but that doesn't seem very important for CFN, so we can skip onhandQuantity.
+
+If all the action data is up to date in hREA, you can do this as a data-driven thing.  It is probably not, but you could make it so if you like.  You might need to add fields.  If you'd rather not, it's fine to just do it in logic.  And we aren't using that many actions: pickup, dropoff, consume, produce, transfer, deliverService.  Don't ever delete a resource, if it ends up with zero quantity, that's fine.
+
+NOTE: Just found an error in the VF doc.  Because that event has an implied transfer in it, i.e. it will create a resource for CFN. But the other pickups do not. So I need to give this some thought when I have more time.  Maybe that first process should be consume and produce, since they are combining the lots.  I need to double check that they are still doing that.  (I.e. putting all the white alpaca in one pile, etc.)  But in any case, I think that on a pickup, if the provider and receiver agent are different, then the receiver becomes the primaryAccountable (owner in capitalism) on the new resource that is created.  At least that would work for CFN for now.  That is how produce works.  And dropoff is probably the same, and accept/modify, but those won't affect CFN.  Anyway, a todo for me.
+
+When creating an EconomicResource, use the following fields:
+
+* name: use the ResourceSpecification name
+* accountingQuantity: use the event resourceQuantity
+* stage: if it is output of a Process, use the ProcessSpecification of the Process
+* primaryAccountable: the receiver on the event determines that, so it will basically always be CFN (until we get to the last transfer, from CFN to the designers, which is the one in the Satisfy Request column, but we can wait on that until later, I don't think we have the UI for it anyhow)
+* conformsTo: the ResourceSpecification on the resoureConformsTo on the event
+
+When updating an EconomicResource, use:
+
+* accountingQuantity: see the action chart; or: if produce, increment the resourceQuantity, if Consume, decrement the resourceQuantity, if transfer, decrement the resourceInventoriedAs.resourceQuantity, increment the toResourceInventoriedAs.resourceQuantity (but we're not worrying about transfer yet, that won't matter until the yarn goes to the designers at the end of season)
+* stage: if it is output of a Process, use the ProcessSpecification of the Process
