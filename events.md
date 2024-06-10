@@ -48,9 +48,18 @@ See in VF:
 
 Whenever an EconomicEvent is saved, it should decide if it should also create or update an EconomicResource.  First this depends on the action, not all actions have inventoried/instantiated EconomicResources.  There is generally a user choice if a resource should be created, but I think for CFN, all resources that can be inventoried will be inventoried. So probably, just the deliverService events won't affect a resource.  If we're not keeping track of location (and I don't think we are until we have a real object instead of lat/long), then transportation won't affect the resource either.  Except onhandQuantity, but that doesn't seem very important for CFN, so we can skip onhandQuantity.
 
-If all the action data is up to date in hREA, you can do this as a data-driven thing.  It is probably not, but you could make it so if you like.  You might need to add fields.  If you'd rather not, it's fine to just do it in logic.  And we aren't using that many actions: pickup, dropoff, consume, produce, transfer, deliverService.  Don't ever delete a resource, if it ends up with zero quantity, that's fine.
+If all the action data is up to date in hREA, you can do this as a data-driven thing.  It is probably not, and we have not very many actions, so let's just do it in logic.  
 
-NOTE: Just found an error in the VF doc.  Because that event has an implied transfer in it, i.e. it will create a resource for CFN. But the other pickups do not. So I need to give this some thought when I have more time.  Maybe that first process should be consume and produce, since they are combining the lots.  I need to double check that they are still doing that.  (I.e. putting all the white alpaca in one pile, etc.)  But in any case, I think that on a pickup, if the provider and receiver agent are different, then the receiver becomes the primaryAccountable (owner in capitalism) on the new resource that is created.  At least that would work for CFN for now.  That is how produce works.  And dropoff is probably the same, and accept/modify, but those won't affect CFN.  Anyway, a todo for me.
+**NOTE**: Just found an error in the VF doc.  Because that event has an implied transfer in it, i.e. it will create a resource for CFN. But the other pickups do not. 
+
+**LOGIC (updated June 10)**:  We can do limited logic just for them for now. They will have only one resource per resource specification (not true of everyone, and possibly not true of them going into next year if they have inventory).  But for now, to see if they have a resource, look for it by resource specification.
+
+* produce: Always create a resource, primaryAccountable is the provider/receiver agent (should be the same for CFN; later we'll need to check if they are different, so if you want to put that in now, that is fine)
+* consume: Always decrement (subtract the quantity) on the existing resource, no other changes needed
+* pickup: If the provider and receiver are different, then create a new resource, primaryAccountable is the receiver.  If they are the same, do nothing about the resource.
+* dropoff: Nothing to do with the resource.
+* deliverService:  Doesn't have a resource.
+* transfer: Let's let this one sit for now, we might want to do transfers on the other page.
 
 When creating an EconomicResource, use the following fields:
 
