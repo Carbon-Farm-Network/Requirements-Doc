@@ -14,6 +14,8 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Requests](Requests.md)
 * [Order](Order.md)
 * [Recipes](Recipes.md)
+* [Events 1](events.md)
+* [Updates after Phase 2 delivery](updates-july-1.md)
 
 ## User Doc
 
@@ -22,3 +24,5 @@ This repo contains documentation of the application requirements for the hREA-ba
 ## Demos
 
 * [Demo 1: Setup, Offers/Requests, start Planning](https://github.com/Carbon-Farm-Network/app-carbon-farm-network/wiki/Demo:--Setup,-Offers-Requests,-Planning-(start))
+* [Demo 2: Video of initial planning](https://www.youtube.com/watch?v=aVUUGcGyeF4)
+
