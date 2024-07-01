@@ -1,4 +1,4 @@
-# Updates post Phase 2
+# Updates post Phase 2 IN PROCESS!!!
 
 These handle the requirements for being able to create a cost commitment for a different quantity than the offer, handling inputs that show up in the middle of the plan sequence, both at planning and after planning as the season progresses, recording events that weren't planned, showing existing inventory on the plan.
 
