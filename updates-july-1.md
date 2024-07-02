@@ -2,7 +2,7 @@
 
 From Laura: "We have 400lbs of clean white wool at the spinning mill (Kraemer) and we are also marrying up the fiber we are delivering to the scouring mill (Bainton) with 150lbs of Brown alpaca, 270 white alpaca and 40 lbs of black alpaca that is already at Bainton.  We'll probably leave the extra wool and alpaca at Kraemer to add to our batch next year."
 
-Basically this lets them add a transfer process in the stage before it is needed.
+Basically this lets them add a transfer commitment in the stage before it is needed.
 
 For now, let's see if we can do this with the stage, and not bring location into the picture unless we need to.  Also we can limit it to this requirement, not knowing what else might fit in later.  I don't know of a way to use an implied transfer in this case, because the quantity will be different, and shouldn't be split up between different process inputs.  So we'll need a real transfer.
 
