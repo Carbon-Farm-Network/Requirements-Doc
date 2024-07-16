@@ -18,3 +18,4 @@ Put an icon (find one?) .... or do this in edit and if qty is changed, do a - an
 
 Put a button similar to other "adds" on the page.  Bring up a modal.  Same fields as adding an event elsewhere, plus `trackingIdentifier`, optional reference to the Commitment, optional reference to the Agreement, reciprocal or not.  If we have time, we can autofill from a Commitment; or figure out how to put Commitments on the page.
 
+Also, we'll want to let them add a process-related event that doesn't have a commitment (wasn't planned).  Maybe also an optional reference to a Process, pick input or output?
