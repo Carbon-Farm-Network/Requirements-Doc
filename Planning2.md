@@ -14,6 +14,6 @@ So one of those choices would replace the "cost" line in the UI.  Then we would 
 
 ## Add unplanned event (process-related)
 
-Put an event icon next to the + on the top of each process input and output columns.  Use that for a modal with all event info we generally have in an add event modal (except the "finish commitment" checkbox), all will need to be editable.  If possible, limit actions to process inputs and outputs [(see chart)](https://www.valueflo.ws/concepts/actions/#behaviors-by-action).  Save the event with the right inputOf or outputOf based on where they selected it.
+Put an event icon next to the + on the top of each process input and output columns. (no white background) Use that for a modal with all event info we generally have in an add event modal (except the "finish commitment" checkbox), all will need to be editable.  If possible, limit actions to process inputs and outputs [(see chart)](https://www.valueflo.ws/concepts/actions/#behaviors-by-action).  Save the event with the right inputOf or outputOf based on where they selected it.
 
 We'll also need to display it at the bottom of the column after it is saved, more-or-less same format as the commitment.  Make it green.  It will need to be editable and deletable, but they don't need to move it up and down, and it wouldn't have the "add event" icon inside the shape.  For now, we can ignore the "cost" feature, although it does make sense to have it eventually, just really really low priority.
