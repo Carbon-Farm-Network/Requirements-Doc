@@ -2,7 +2,7 @@
 
 ![planning-update(1)](https://github.com/user-attachments/assets/e30b5649-2682-4087-b159-3afe8d67c72f)
 
-## Ability to edit cost
+## Ability to edit and delete cost
 
 Really, ability to edit the reciprocal commitment, and also add events. 
 
