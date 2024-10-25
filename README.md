@@ -15,13 +15,9 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Recipes](Recipes.md)
 * [Events 1](events.md)
 * [Non-process Plan Commitment](updates-july-1.md)
-* [Supply-Driven Calc in Plan](supply-driven.md)
 * [Events 2](Events2.md)
 * [Planning 2](Planning2.md)
-
-## User Doc
-
-* [Minimal doc for Release 1](user-rel1.md)
+* [Replanning (supply- and demand-driven](Replanning.md)
 
 ## Demos
 
