@@ -12,7 +12,6 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Resource Specifications](ResourceSpecification.md)
 * [Offers](Offers.md)
 * [Requests](Requests.md)
-* [Order](Order.md)
 * [Recipes](Recipes.md)
 * [Events 1](events.md)
 * [Non-process Plan Commitment](updates-july-1.md)
