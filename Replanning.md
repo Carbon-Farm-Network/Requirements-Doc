@@ -9,3 +9,11 @@ This calculates backwards.
 ## Supply-driven
 
 This calculates forwards.
+
+Logic: 
+```
+For each Commitment in the column
+  If the Commitment is not finished, use that quantity
+  Else add up the Economic Event quantities, and use that
+  
+```
