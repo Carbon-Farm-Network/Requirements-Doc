@@ -4,7 +4,7 @@ This needs full stack implementation, backend, graphql, UI.  (Dec '24: A lot of 
 
 ## hREA
 
-This needs to be added to hREA, including the graphql api.  Figure out the technical part.  Dec '24: Here is the current VF model (blue is new).  
+This needs to be added to hREA, including the graphql api.  (Dec '24: Here is the current VF model (blue is new).  But also see notes on the old diagram below.)  
 
 ![recipe-uml](https://github.com/user-attachments/assets/ec26d885-b515-45f4-ad5f-da7cf0cb8a47)
 
