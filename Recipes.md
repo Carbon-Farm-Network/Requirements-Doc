@@ -1,22 +1,22 @@
 # Recipe CRUD
 
-This needs full stack implementation, backend, graphql, UI.
+This needs full stack implementation, backend, graphql, UI.  (Dec '24: A lot of this is done.)  We also need to change the code in the planning create plan from recipe logic to use this data instead of the included hard-coded recipe file.
 
 ## hREA
 
-This needs to be added to hREA, including the graphql api.  Figure out the technical part.  Probably its own zome, maybe also DNA?
+This needs to be added to hREA, including the graphql api.  Figure out the technical part.  Dec '24: Here is the current VF model (blue is new).  
 
-Here is the model (blue is new).  
+![recipe-uml](https://github.com/user-attachments/assets/ec26d885-b515-45f4-ad5f-da7cf0cb8a47)
 
-**NEW Nov26** One new relationship on the model:  Add another relationship called recipeReciprocalClauseOf in RecipeFlow, referencing RecipeExchange.  It should look just like recipeClauseOf.
 
+Here is the OLD MODEL FROM THIS SPEC.  Note we've added some inverse names here (and elsewhere).  And one new relationship between RecipeFlow and RecipeExchange.  (I don't know the best way to implement this in holochain-land.  It isn't important that the data store have all that, it can pick a direction to implement if you like, but it should be as clean and performant as possible.  It is only important that the api can support both directions.  And even that may or may not be important for CFN, I don't know.)
 ![recipes](https://github.com/Carbon-Farm-Network/Requirements-Doc/assets/3776081/13212e0f-5ccb-4b87-91be-55d43523759d)
 
 For CFN, I think they will have only one-process recipes, with that process's inputs and outputs.  (Other use cases will probably require multiple processes per recipe, but we don't have to worry about that now in terms of the UI.)
 
-1. Add `substitutable` to ResourceSpecification. 
-2. Two new classes: `RecipeProcess` and `RecipeFlow`.  And their relationships.  They have basically the same structure as `Process` and `Commitment`; or `Process` and `EconomicEvent`; or `Process` and `Intent`.  A process with it's input and output flows.  The main way the relationships work is from `RecipeFlow` to `Process`.  (We'll eventually want queries that go the other direction.)  You can find the same properties and copy them from those existing classes, should be the same datatypes. We won't need the RecipeProcess.hasDuration in the UI, so you can put it in the backend or leave it for later, whichever seems to make the most sense.
-4. We'll also want `RecipeExchange` and a way to create one using an existing `RecipeFlow`, and adding new flows.
+1. Add `substitutable` to ResourceSpecification. (Although I don't know that we are actually using that for CFN, we are just assuming all resource specs are substitutable.)
+2. For production planning, two new classes: `RecipeProcess` and `RecipeFlow`.  And their relationships.  They have basically the same structure as `Process` and `Commitment`; or `Process` and `EconomicEvent`; or `Process` and `Intent`.  A process with it's input and output flows.  The main way the relationships work is from `RecipeFlow` to `Process`.  (We'll eventually want queries that go the other direction.)  You can find the same properties and copy them from those existing classes, should be the same datatypes. We won't need the RecipeProcess.hasDuration in the UI, so you can put it in the backend or leave it for later, whichever seems to make the most sense.
+4. For exchange planning, we'll also want `RecipeExchange` and a way to create one using an existing `RecipeFlow`, and adding new flows.
 
 ## UI
 
@@ -35,9 +35,6 @@ Exchange Section:
 
 * Same columns but they are Primary, Exchange, Reciprocal.
 
-
-
-
 Process:
 * Name - RecipeProcess.name - required
 * Description - RecipeProcess.note - optional
@@ -48,7 +45,7 @@ Input (for each one):
 * Action - RecipeFlow.action (drop down of Actions, only the ones where Action.inputOutput is input) - required
 * Quantity, Unit (like on Offers) - RecipeFlow.resourceQuantity (drop down on units) - required
 * Resource Specification - RecipeFlow.resourceConformsTo (drop down of all RSs) - required
-* Stage - RecipeFlow.stage (drop down of ProcessSpecification.name), text something like "choose if this resource must come from a specific process specification" - optional
+* Stage - RecipeFlow.stage (drop down of ProcessSpecification.name), text something like "choose if this resource must come from a specific stage of production" - optional
 * Description - RecipeFlow.note - optional
 
 Output (for each one):
@@ -66,7 +63,7 @@ Output (for each one):
 
 Add "substitutable" to the ResourceSpecification modal - true, false, or null.  Some text would be good, like "Any item of this specification can be substituted for any other".  Could default in the list to true.
 
-## Data
+## Data (just informational)
 
 Here's a way to think about the recipes.  In this diagram, each process is a recipe.  So, for example, the Ship processes are one process with multiple inputs and outputs; but the Spin processes are one process per output.  This is so tracing the input-process-output graph will work correctly. Together these recipes should be able to create the plan that is mocked up (actually a more complex plan, but that idea).  The data knows how to hook itself together to make the graph, by matching the `resourceConformsTo` (ResourceSpecification) and sometimes the `stage` (ProcessSpecification), between output of one process and input to another process. (This diagram needs some work at the beginning and end as it connects to offers and requests; but should be good in the middle.)
 
