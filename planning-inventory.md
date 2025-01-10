@@ -4,8 +4,8 @@ In 2025 CFN will have some inventory from 2024 (clean white wool).  The plan-fro
 
 ## Logic backwards
 
-Add to the logic for each time an input commitment looks for a recipe that creates the resource spec + stage (if it exists in the input commitment) that the input commitment (the demand) wants:
-
+Add to the logic for each time an input commitment looks for a recipe that creates the resource spec + stage (if it exists in the input commitment) that the input commitment (the demand) wants.  Something like this, but probably you can structure it better:
+```
 If there is an inventory item for that resource spec + stage (if it exists in the input) then
     If the inventory item quantity < the input quantity then
         Subtract the input quantity - the inventory quantity, use that instead of the input quantity in the logic
@@ -13,7 +13,7 @@ If there is an inventory item for that resource spec + stage (if it exists in th
     Else you are done, no need to find a recipe, but keep track that part or all of the inventory is used
 Else
     Existing logic....
-
+```
 Note: we don't want to use the same inventory item more than once.  I think it is safe to say that we can't use the same inventory while processing one input column.
 
 ## Logic forwards
