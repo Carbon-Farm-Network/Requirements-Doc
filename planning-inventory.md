@@ -18,7 +18,7 @@ Note: we don't want to use the same inventory item more than once in the plan.  
 
 ## Logic forwards
 
-The following logic is for just before the season starts.  It will be more complex after there are new economic events that have created new inventory as part of the new season.  More thought needed on that.
+The following logic is for just before the season starts.  It will be more complex after there are new economic events that have created new inventory as part of the new season.  More thought needed on that, but can wait until the next milestone that includes events.
 
 Input to output (same stage): 
 ```
@@ -37,3 +37,7 @@ For all actions (I think), add matching available inventory (see rules above) to
 I think the inventory should show up in the column before it is needed, which would be an output column. It can be below the gray stage backgrounds, like the existing transfer in commitments we have now. Let's use a different shape, a rectangle is good.  It should be green, since it is already there.  Fields: resource specification name, quantity/unit.  We'll want to figure out how to not show this year's inventory, vs last year's, once the season starts.  At least I think that would be confusing.  But I'm not sure of a good way.  It might mostly work to check the last event year for the resource, although that is a hack specific to ag-based supply chain.
 
 I think we should also change the transfer-in commitments to the output columns before use (the + icon and the shape).
+
+And if the transfer-in commitments are not being used as part of the supply-forward calculations, we should add that.  Should work similar to the inventory I think, except using the commitment quantity.
+
+
