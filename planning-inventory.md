@@ -6,7 +6,7 @@ In 2025 CFN will have some inventory from 2024 (clean white wool).  The plan-fro
 
 Add to the logic for each time an input commitment looks for a recipe that creates the resource spec + stage (if it exists in the input commitment) that the input commitment (the demand) wants.  Something like this, but probably you can structure it better:
 ```
-Add up all the input commitment quantities (demands) in that column, for all processes in the stage, for that resource spec + stage (if stage exists in the input commitments, otherwise just resource spec).  This is the "demand" quantity.  (This is probably already done.)
+Add up all the input commitment quantities (demands) in that column, for all processes in the stage, for that resource spec + stage (if stage exists in the input commitments, otherwise just resource spec).  This is the "demand" quantity.  (This is probably already done. Or if you want to do it one at a time, that would be fine, as long as you can take into account what you just did, like by including the commitments just in memory.)
 
 Add up all the inventory items and unfinished `produce` or `transfer` into network commitments (i.e. all the existing or already planned inventory), subtract any unfinished `consume` or `transfer` out of network commitments (i.e. all the other commitments that will want to use that same inventory), for that resource spec + stage (if stage exists in the input commitment, otherwise just resource spec).  This is the "net" quantity.
 
