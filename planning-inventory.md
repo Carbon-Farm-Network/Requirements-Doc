@@ -6,15 +6,19 @@ In 2025 CFN will have some inventory from 2024 (clean white wool).  The plan-fro
 
 Add to the logic for each time an input commitment looks for a recipe that creates the resource spec + stage (if it exists in the input commitment) that the input commitment (the demand) wants.  Something like this, but probably you can structure it better:
 ```
-If there is an inventory item for that resource spec + stage (if it exists in the input) then
-    If the inventory item quantity < the input quantity then
-        Subtract the input quantity - the inventory quantity, use that instead of the input quantity in the logic
+Add up all the input commitment quantities (demands) in that column, for all processes in the stage, for that resource spec + stage (if stage exists in the input commitments, otherwise just resource spec).  This is the "demand" quantity.  (This is probably already done.)
+
+Add up all the inventory items and unfinished `produce` or `transfer` into network commitments (i.e. all the existing or already planned inventory), subtract any unfinished `consume` or `transfer` out of network commitments (i.e. all the other commitments that will want to use that same inventory), for that resource spec + stage (if stage exists in the input commitment, otherwise just resource spec).  This is the "net" quantity.
+
+If net quantity > 0 then
+    If the "net" quantity < the "demand" quantity then
+        Calc the demand quantity minus the net quantity, use that instead of the demand quantity in the logic
         Existing logic....
-    Else you are done with this input demand, no need to find a recipe, but keep track that part or all of that inventory is used
+    Else you are done with this input demand, no need to find a recipe or proceed further for that res spec + stage if applicable
 Else
     Existing logic....
 ```
-Note: we don't want to use the same inventory item more than once in the plan.  I think it is safe to say that we can't use the same inventory while processing one input column, since if the same resource spec is used in more than one stage, the stage will be noted in the resource and be used in the comparison. There may be a safer way to do this, that would safely cross multiple plans and multiple stages, like figuring out the available inventory quantity by taking the resource quantity and subtracting any existing unfinished commitments, adding any event quantities that fulfill that commmitment.
+Note for the future: We should be taking into account substitutability (if not substitutable, then inventory is not relevant).  We should also be taking into account dates, so that if planned increases to inventory occur after the current commitment demand, then they are not included.  These shouldn't matter for CFN, at least yet.
 
 ## Logic forwards
 
