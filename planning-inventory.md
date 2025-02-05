@@ -8,11 +8,11 @@ Add to the logic for each time an input commitment looks for a recipe that creat
 ```
 Add up all the input commitment quantities (demands) in that column, for all processes in the stage, for that resource spec + stage (if stage exists in the input commitments, otherwise just resource spec).  This is the "demand" quantity.  (This is probably already done. Or if you want to do it one at a time, that would be fine, as long as you can take into account what you just did, like by including the commitments just in memory.)
 
-Add up all the inventory items and unfinished `produce` or `transfer` into network commitments (i.e. all the existing or already planned inventory), subtract any unfinished `consume` or `transfer` out of network commitments (i.e. all the other commitments that will want to use that same inventory), for that resource spec + stage (if stage exists in the input commitment, otherwise just resource spec).  This is the "net" quantity.
+Add up all the inventory items and unfinished `produce` or `transfer` into network commitments (i.e. all the existing or already planned inventory), subtract any unfinished `consume` or `transfer` out of network commitments (i.e. all the other commitments that will want to use that same inventory), for that resource spec + stage (if stage exists in the input commitment, otherwise just resource spec).  This is the "available" quantity.
 
-If net quantity > 0 then
-    If the "net" quantity < the "demand" quantity then
-        Calc the demand quantity minus the net quantity, use that instead of the demand quantity in the logic
+If available quantity > 0 then
+    If the available quantity < the demand quantity then
+        Calc the demand quantity minus the available quantity, use that instead of the demand quantity in the logic
         Existing logic....
     Else you are done with this input demand, no need to find a recipe or proceed further for that res spec + stage if applicable
 Else
