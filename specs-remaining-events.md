@@ -50,4 +50,12 @@ On the event list (Activities), add an option for each event "Correct"
 
 ## Unplanned production events
 
+Minimal implementation to start with.
 
+On the planning page, next to the + used to create a new input or output commitment on a process, add one of those event icons.  (The arrows for replanning can stay on the outsides of those.)
+
+When they select the new icon, bring up a record event modal, with all fields opened up, no defaults, and without the finish commitment. 
+
+When they save it, connect it to the process with inputOf or outputOf, without any commitment involved.
+
+(Later, we'll want to get it displayed on the plan probably, but it shouldn't matter right now, and it will be infrequently used if ever, for this network.  But we need it just in case.  It will show up on the event list.)
