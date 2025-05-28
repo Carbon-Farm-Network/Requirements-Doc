@@ -24,8 +24,20 @@ The current parts of the modal work as now.  If they check one of those new chec
 
 Save the one event, fulfilling all of the chosen commitments.  
 
-If finished is chosen, update the finished flag on all of the chosen commitments and change the color on all to green.  If finished is not chosen, change color of all to yellow.  If we are now showing number of events on the reciprocal commitments (can't remember), then show one event on each of the commitments fulfilled. (If that is some work, we can skip for now.)
+If finished is chosen, update the finished flag on all of the chosen commitments and change the color on all to green.  If finished is not chosen, change color of all to yellow. If we are now showing number of events on the reciprocal commitments (can't remember), then show one event on each of the commitments fulfilled. (If that is some work, we can skip for now.)
+
+## Non-production planned events
 
 
+
+## Event corrections
+
+On the event list, add an option for each event "Correct"
+
+Bring up a modal to add an event, basically like the existing one except they can't change provider, receiver, action, resource spec.  The title could be something like Correct Economic Event. We need to allow negative quantities on this one.  Or if we are really nice, we could bring up the original quantity and let them just make that the correct quantity, and save the difference in the new event.  If we do that, the label could be "Corrected quantity" or something similar.
+
+Save the event normally, and also include the reference to the corrected event in the `corrects` field.
+
+## Add unplanned production event
 
 
