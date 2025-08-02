@@ -14,7 +14,9 @@ Put an edit icon (like the one on commitments on the planning page) on the right
 
 ## Correct event
 
-Put an icon (find one?) .... or do this in edit and if qty is changed, do a - and a + ????  Let's discuss, and I'll ask the CFN.  This is a **lower priority** for now.
+Put an icon (find one?) .... or do this in edit and if qty is changed, do a - and a + ????  Let's discuss, and I'll ask the CFN.
+
+Note: The edit and correct event could possibly be done in the same modal.
 
 ## Add event
 
