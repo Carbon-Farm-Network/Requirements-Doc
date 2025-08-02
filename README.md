@@ -18,6 +18,7 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Events 2](Events2.md)
 * [Planning 2](Planning2.md)
 * [Cash Flow Report](cash-flow.md)
+* [Exchange Page](exchange-page.md)
 
 
 ## Demos
