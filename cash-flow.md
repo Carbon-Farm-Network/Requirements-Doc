@@ -17,6 +17,7 @@ Suggested columns for our report, sorted by date ascending:
 * "Date" - use hasPointInTime
 * "Amount" - use a minus if paid by CFN (for now), use the color scheme they have (approximately)
 * "Note" - our note field
+* "Check Number" - check number, we probably need a field on EconomicEvent for this kind of thing, and if so probably more generic, not sure how this works with crypto.... possibly could be combined on the report with the routing number below, but I need to understand this better
 * "Routing" - to be discussed with the users - for now, let's just leave this off
 * "Balance" - keep a running balance
   
