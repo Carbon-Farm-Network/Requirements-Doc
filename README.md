@@ -17,6 +17,7 @@ This repo contains documentation of the application requirements for the hREA-ba
 * [Non-process Plan Commitment](updates-july-1.md)
 * [Events 2](Events2.md)
 * [Planning 2](Planning2.md)
+* [Events 3](specs-remaining-events.md)
 * [Cash Flow Report](cash-flow.md)
 * [Exchange Page](exchange-page.md)
 
